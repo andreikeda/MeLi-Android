@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName
 "currency_id": "ARS"
  */
 data class InstallmentsVO(
-    val quantity:  Int,
+    val quantity: Int,
     val amount: Double,
     val rate: Double,
     @SerializedName("currency_id") val currencyId: String

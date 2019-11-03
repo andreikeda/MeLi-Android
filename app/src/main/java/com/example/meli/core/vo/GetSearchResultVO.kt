@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class GetSearchResultVO(
     val id: String,
     val title: String,
-    val price: Int,
+    val price: Double,
     @SerializedName("currency_id") val currencyId: String,
     @SerializedName("available_quantity") val availableQuantity: Int,
     @SerializedName("sold_quantity") val soldQuantity: Int,
