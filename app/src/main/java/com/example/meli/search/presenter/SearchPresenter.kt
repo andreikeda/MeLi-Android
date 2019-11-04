@@ -3,6 +3,7 @@ package com.example.meli.search.presenter
 import android.util.Log
 import com.example.meli.BuildConfig
 import com.example.meli.core.model.SearchResultModel
+import com.example.meli.core.vo.AttributesVO
 import com.example.meli.core.vo.GetSearchVO
 import com.example.meli.search.contract.SearchContract
 import com.example.meli.search.interactor.SearchInteractor
@@ -39,9 +40,12 @@ class SearchPresenter(var mView: SearchContract.View?) : SearchContract.Presente
                     thumbnail = r.thumbnail
                     soldUnits = r.soldQuantity
                     status = r.condition
+                    acceptsMercadoPago = r.acceptsMercadoPago
                     sellerCity = r.address?.cityName?.let { it } ?: run { "" }
                     sellerState = r.address?.stateName?.let { it } ?: run { "" }
                     sellerStatus = r.seller.powerSellerStatus?.let { it } ?: run { "" }
+                    tags.plus(r.tags)
+                    populateAttributesHashMap(attributes, r.attributes)
                 }
             )
         }
@@ -60,5 +64,14 @@ class SearchPresenter(var mView: SearchContract.View?) : SearchContract.Presente
         mInteractor?.unregister()
         mInteractor = null
         mView = null
+    }
+
+    private fun populateAttributesHashMap(
+        hashMap: HashMap<String, String>,
+        attributes: List<AttributesVO>
+    ) {
+        for (attr in attributes) {
+            hashMap[attr.name] = attr.valueName
+        }
     }
 }

@@ -16,6 +16,11 @@
     <string name="label_locale">Localização</string>
     <string name="label_seller_info">Informações do vendedor</string>
     <string name="label_seller_status">Classificação</string>
+    <string name="label_warranty">Garantia</string>
+    <string name="label_warranty_mercado_pago">Compra Garantida com o Mercado Pago</string>
+    <string name="label_warranty_mercado_pago_sub">Receba o produto que está esperando ou devolvemos o dinheiro.</string>
+    <string name="label_warranty_seller">Garantia do vendedor</string>
+    <string name="label_warranty_seller_sub">Garantia do vendedor: 7 dias</string>
 
     <string name="title_detail">Produto</string>
     <string name="title_search">MeLi Test</string>

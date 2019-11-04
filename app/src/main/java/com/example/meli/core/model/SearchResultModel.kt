@@ -13,6 +13,9 @@ class SearchResultModel : Serializable {
     var sellerCity: String = ""
     var sellerState: String = ""
     var sellerStatus: String = ""
+    var attributes: HashMap<String, String> = hashMapOf()
+    var tags: Array<String> = arrayOf()
+    var acceptsMercadoPago: Boolean = false
 
     val sellerLocaleFormatted: String
         get() = "$sellerCity, $sellerState"

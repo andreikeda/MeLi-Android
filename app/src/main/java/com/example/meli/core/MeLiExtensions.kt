@@ -32,3 +32,21 @@ fun Context.showInternetConnectionErrorSnackBar(rootView: View) {
             )
         }.show()
 }
+
+fun HashMap<String, String>.splitInto(interval: Int, initial: Int): HashMap<String, String> {
+    val splittedHashMap = hashMapOf<String, String>()
+    var count = 0
+    var reachInitial = false
+    forEach { (key, value) ->
+        if (count == initial) {
+            reachInitial = true
+        }
+        count++
+        if (reachInitial && (count <= (interval + initial))) {
+            splittedHashMap[key] = value
+        } else if (count > (interval + initial)) {
+            return@forEach
+        }
+    }
+    return splittedHashMap
+}

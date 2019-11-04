@@ -11,6 +11,7 @@
     <dimen name="font_h5">18sp</dimen>
     <dimen name="font_h6">16sp</dimen>
     <dimen name="font_h7">14sp</dimen>
+    <dimen name="font_h8">12sp</dimen>
 
     <dimen name="item_radius">6dp</dimen>
 

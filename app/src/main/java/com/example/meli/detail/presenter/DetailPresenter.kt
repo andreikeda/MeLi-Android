@@ -1,6 +1,7 @@
 package com.example.meli.detail.presenter
 
 import com.example.meli.core.model.SearchResultModel
+import com.example.meli.core.splitInto
 import com.example.meli.detail.contract.DetailContract
 
 class DetailPresenter(var mView: DetailContract.View?) : DetailContract.Presenter {
@@ -25,6 +26,20 @@ class DetailPresenter(var mView: DetailContract.View?) : DetailContract.Presente
                 }
             }
             setThumbnail(data.thumbnail)
+            if (data.attributes.isEmpty()) {
+                hideGroupAttributes()
+            } else {
+                for (i in 0 until data.attributes.size step 2) {
+                    addAttributesTableRow(data.attributes.splitInto(2, i))
+                }
+            }
+            if (data.tags.isEmpty() &&
+                    !data.acceptsMercadoPago) {
+                hideGroupWarranty()
+            } else if (data.acceptsMercadoPago &&
+                !data.tags.contains("extended_warranty_eligible")) {
+                hideGroupWarrantySeller()
+            }
         }
     }
 

@@ -76,6 +76,7 @@
 
             <TextView
                 android:id="@+id/tv_status_and_sold"
+                style="@style/Text.Detail.StatusAndSold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/app_margin_vertical"
@@ -85,6 +86,7 @@
 
             <TextView
                 android:id="@+id/tv_title"
+                style="@style/Text.Detail.Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/guideline_start"
@@ -93,6 +95,7 @@
 
             <TextView
                 android:id="@+id/tv_price"
+                style="@style/Text.Detail.Price"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/guideline_start"
@@ -111,6 +114,7 @@
 
             <TextView
                 android:id="@+id/tv_label_seller"
+                style="@style/Text.Detail.Header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/app_margin_vertical"
@@ -132,6 +136,7 @@
 
             <TextView
                 android:id="@+id/tv_label_locale"
+                style="@style/Text.Detail.Locale"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/label_locale"
@@ -141,6 +146,7 @@
 
             <TextView
                 android:id="@+id/tv_locale"
+                style="@style/Text.Detail.Locale.Label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@id/tv_label_locale"
@@ -149,6 +155,7 @@
 
             <TextView
                 android:id="@+id/tv_label_seller_status"
+                style="@style/Text.Detail.Locale"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/app_margin_vertical"
@@ -159,6 +166,7 @@
 
             <TextView
                 android:id="@+id/tv_seller_status"
+                style="@style/Text.Detail.Locale.Label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/guideline_start"
@@ -184,7 +192,7 @@
                 app:constraint_referenced_ids="group_seller_info,group_seller_locale,tv_label_seller,separator_product_from_seller"/>
 
             <View
-                android:id="@+id/separator_seller_from_attributes"
+                android:id="@+id/separator_seller_from_warranty"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/separator"
                 android:layout_marginTop="@dimen/app_margin_vertical"
@@ -194,23 +202,105 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_seller_status"/>
 
             <TextView
+                android:id="@+id/tv_label_warranty"
+                style="@style/Text.Detail.Header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_warranty"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/separator_seller_from_warranty"/>
+
+            <TextView
+                android:id="@+id/tv_label_warranty_mercado_pago"
+                style="@style/Text.Detail.Label1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_warranty_mercado_pago"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_warranty"/>
+
+            <TextView
+                android:id="@+id/tv_label_warranty_mercado_pago_sub"
+                style="@style/Text.Detail.Label2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_warranty_mercado_pago_sub"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_warranty_mercado_pago"/>
+
+            <TextView
+                android:id="@+id/tv_label_warranty_seller"
+                style="@style/Text.Detail.Label1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_warranty_seller"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_warranty_mercado_pago_sub"/>
+
+            <TextView
+                android:id="@+id/tv_label_warranty_seller_sub"
+                style="@style/Text.Detail.Label2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_warranty_seller_sub"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_warranty_seller"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_warranty_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_label_warranty_seller_sub,tv_label_warranty_seller"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_warranty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_label_warranty,tv_label_warranty_mercado_pago,tv_label_warranty_mercado_pago_sub,tv_label_warranty_seller,tv_label_warranty_seller_sub,separator_seller_from_warranty"/>
+
+            <View
+                android:id="@+id/separator_warranty_from_attributes"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/separator"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_warranty_seller_sub"/>
+
+            <TextView
                 android:id="@+id/tv_label_attributes"
+                style="@style/Text.Detail.Header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/app_margin_vertical"
                 android:text="@string/label_attributes"
                 app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintEnd_toStartOf="@id/guideline_end"
-                app:layout_constraintTop_toBottomOf="@id/separator_seller_from_attributes"/>
+                app:layout_constraintTop_toBottomOf="@id/separator_warranty_from_attributes"/>
 
-            <TextView
-                android:id="@+id/tv_lorem_ipsum"
+            <TableLayout
+                android:id="@+id/table_attributes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui non dui feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam porttitor interdum ex eu ultricies. Aenean at turpis blandit, ullamcorper justo pulvinar, sagittis lorem. Aliquam erat volutpat. Nulla vel luctus orci. Phasellus eu efficitur massa, a porta felis. Pellentesque lacinia elit eu lorem elementum scelerisque. Nulla vulputate lorem at dolor aliquet, et rhoncus sapien vehicula. Cras ac erat ut augue tristique iaculis nec ut justo. Suspendisse pharetra finibus faucibus. Mauris vehicula metus mauris, vitae consectetur dui lobortis id.\n\nQuisque est dolor, cursus at ante at, gravida tempus lacus. Ut at sapien sodales, condimentum nunc nec, commodo purus. Suspendisse tellus ex, egestas dapibus ex nec, efficitur maximus risus. Praesent semper purus ac tortor scelerisque, non aliquam tellus scelerisque. Vivamus nec nulla sit amet arcu dapibus eleifend. Donec tristique ante id lacus ullamcorper porttitor. Sed lectus elit, egestas vitae tristique sed, vestibulum sit amet diam. Fusce scelerisque id justo non auctor. Proin condimentum, sapien eget bibendum fermentum, metus tortor fringilla enim, nec tempor lorem diam id arcu. Proin magna est, consectetur pretium ex non, imperdiet posuere sapien. Curabitur porta interdum felis, at aliquam urna dictum nec. Vivamus nulla urna, fringilla sed sapien elementum, lacinia commodo est. Fusce dictum, eros non bibendum varius, sapien ante mollis ante, id cursus augue sapien ac lacus."
+                android:stretchColumns="*"
                 app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintTop_toBottomOf="@id/tv_label_attributes"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_attributes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_label_attributes,table_attributes,separator_warranty_from_attributes"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
