@@ -18,7 +18,6 @@ import com.example.meli.R
 import com.example.meli.core.model.SearchResultModel
 import com.example.meli.detail.contract.DetailContract
 import com.example.meli.detail.presenter.DetailPresenter
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity(), DetailContract.View {
