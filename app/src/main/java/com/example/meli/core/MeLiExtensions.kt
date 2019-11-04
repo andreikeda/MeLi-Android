@@ -24,12 +24,10 @@ fun Context.isInternetConnectionAvailable(): Boolean {
 fun Context.showInternetConnectionErrorSnackBar(rootView: View) {
     Snackbar
         .make(rootView, getString(R.string.error_no_connection_message), Snackbar.LENGTH_INDEFINITE)
-        .setAction(getString(R.string.button_go_settings)) {
-            startActivity(
-                Intent(Intent.ACTION_MAIN).apply {
-                    setClassName("com.android.phone", "com.android.phone.NetworkSetting")
-                }
-            )
+        .setAction(R.string.button_refresh) {
+            if (!isInternetConnectionAvailable()) {
+                showInternetConnectionErrorSnackBar(rootView)
+            }
         }.show()
 }
 

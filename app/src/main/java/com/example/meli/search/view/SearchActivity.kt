@@ -77,9 +77,13 @@ class SearchActivity : AppCompatActivity(), SearchContract.View, SearchView.OnQu
     }
 
     override fun onQueryTextSubmit(query: String): Boolean {
-        mPresenter?.onSearchQuerySubmit(query)
-        closeKeyboard(currentFocus)
-        return true
+        if (isInternetConnectionAvailable()) {
+            mPresenter?.onSearchQuerySubmit(query)
+            closeKeyboard(currentFocus)
+            return true
+        }
+        showInternetConnectionErrorSnackBar(root_view)
+        return false
     }
 
     override fun onQueryTextChange(newText: String): Boolean {

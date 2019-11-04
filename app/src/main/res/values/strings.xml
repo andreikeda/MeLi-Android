@@ -2,6 +2,7 @@
     <string name="app_name">MeLi</string>
 
     <string name="button_go_settings">Configurações</string>
+    <string name="button_refresh">Atualizar</string>
 
     <string name="empty"></string>
 
