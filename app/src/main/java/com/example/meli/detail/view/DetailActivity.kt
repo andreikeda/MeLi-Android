@@ -63,12 +63,13 @@ class DetailActivity : AppCompatActivity(), DetailContract.View {
         items.forEach { (key, value) ->
             val ll = LinearLayout(this).apply {
                 layoutParams = TableRow.LayoutParams(
+                    0,
                     TableRow.LayoutParams.WRAP_CONTENT,
-                    TableRow.LayoutParams.WRAP_CONTENT
+                    1f
                 )
                 orientation = LinearLayout.VERTICAL
                 gravity = Gravity.CENTER_VERTICAL
-                setPadding(0, spacing, 0, spacing)
+                setPadding(spacing / 4, spacing, spacing / 4, spacing)
             }
             val keyTextView = TextView(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
