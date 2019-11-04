@@ -56,15 +56,45 @@ interface DetailContract {
         fun hideGroupWarrantySeller()
 
         /**
-         * Method to set product price label
+         * Method to set product price output
          *
-         * @param price -
+         * @param price - output string
          */
         fun setProductPrice(price: String)
+
+        /**
+         * Method to set status and sold output
+         *
+         * @param statusAndSold - output string
+         */
         fun setProductStatusAndSold(statusAndSold: String)
+
+        /**
+         * Method to set product title output
+         *
+         * @param title - output string
+         */
         fun setProductTitle(title: String)
+
+        /**
+         * Method to set seller locale output
+         *
+         * @param locale - output string
+         */
         fun setSellerLocale(locale: String)
+
+        /**
+         * Method to set seller status output
+         *
+         * @param sellerStatus - output string
+         */
         fun setSellerStatus(sellerStatus: String)
+
+        /**
+         * Method to set thumbnail
+         *
+         * @param thumbnail - output string
+         */
         fun setThumbnail(thumbnail: String)
     }
 }

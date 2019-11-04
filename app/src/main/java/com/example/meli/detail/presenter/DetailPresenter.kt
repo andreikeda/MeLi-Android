@@ -4,6 +4,11 @@ import com.example.meli.core.model.SearchResultModel
 import com.example.meli.core.splitInto
 import com.example.meli.detail.contract.DetailContract
 
+/**
+ * Presenter class to manipulate data and update UI.
+ *
+ * @param mView - View contract to request ui changes
+ */
 class DetailPresenter(var mView: DetailContract.View?) : DetailContract.Presenter {
     override fun initComponents(data: SearchResultModel) {
         val isSellerInfoEmpty = data.sellerLocaleFormatted.isBlank() && data.sellerStatus.isBlank()
