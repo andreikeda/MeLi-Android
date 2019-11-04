@@ -3,14 +3,19 @@
 
     <string name="button_go_settings">Configurações</string>
     <string name="button_refresh">Atualizar</string>
+    <string name="button_start">Entrar</string>
 
     <string name="empty"></string>
 
+    <string name="error_invalid_email">Email inválido</string>
+    <string name="error_invalid_password">Senha deve ter entre 8 e 12 caracteres</string>
     <string name="error_no_connection_message">Sem conexão à internet.</string>
 
     <string name="formatted_results_label">Foram encontrados %d itens</string>
     <string name="formatted_status_and_sold_units">%s vendidos</string>
 
+    <string name="hint_email">Informe seu email</string>
+    <string name="hint_password">Informe sua senha</string>
     <string name="hint_query">Digite o que procura</string>
 
     <string name="label_attributes">Características</string>
