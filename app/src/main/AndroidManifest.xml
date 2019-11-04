@@ -13,13 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".search.view.SearchActivity">
+        <activity
+            android:name=".search.view.SearchActivity"
+            android:label="@string/title_search">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".detail.view.DetailActivity"
+            android:label="@string/title_detail"/>
     </application>
 
 </manifest>

@@ -7,5 +7,16 @@
 
     <string name="error_no_connection_message">Sem conexão à internet.</string>
 
+    <string name="formatted_results_label">Foram encontrados %d itens</string>
+    <string name="formatted_status_and_sold_units">%s vendidos</string>
+
     <string name="hint_query">Digite o que procura</string>
+
+    <string name="label_attributes">Características</string>
+    <string name="label_locale">Localização</string>
+    <string name="label_seller_info">Informações do vendedor</string>
+    <string name="label_seller_status">Classificação</string>
+
+    <string name="title_detail">Produto</string>
+    <string name="title_search">MeLi Test</string>
 </resources>

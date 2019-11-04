@@ -8,6 +8,16 @@ class SearchResultModel : Serializable {
     var price: Double = 0.0
     var currency: String = ""
     var thumbnail: String = ""
+    var soldUnits: Int = 0
+    var status: String = ""
+    var sellerCity: String = ""
+    var sellerState: String = ""
+    var sellerStatus: String = ""
+
+    val sellerLocaleFormatted: String
+        get() = "$sellerCity, $sellerState"
+    val statusAndSoldUnitsFormatted: String
+        get() = "$status - $soldUnits"
     val priceFormatted: String
         get() = "$currency$ $price"
 }

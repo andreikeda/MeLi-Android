@@ -17,6 +17,6 @@ data class GetSearchResultVO(
     val attributes: List<AttributesVO>,
     val seller: SellerVO,
     val installments: InstallmentsVO,
-    val address: AddressVO,
+    val address: AddressVO?,
     val shipping: ShippingVO
 )

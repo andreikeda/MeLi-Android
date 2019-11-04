@@ -28,6 +28,7 @@ class SearchPresenter(var mView: SearchContract.View?) : SearchContract.Presente
         for (r in result.results) {
             if (BuildConfig.enableDebugLogging) {
                 Log.i(TAG, "${r.id}. ${r.title}")
+                Log.i(TAG, "seller: ${r.seller}")
             }
             results.add(
                 SearchResultModel().apply {
@@ -36,6 +37,11 @@ class SearchPresenter(var mView: SearchContract.View?) : SearchContract.Presente
                     price = r.price
                     currency = r.currencyId
                     thumbnail = r.thumbnail
+                    soldUnits = r.soldQuantity
+                    status = r.condition
+                    sellerCity = r.address?.cityName?.let { it } ?: run { "" }
+                    sellerState = r.address?.stateName?.let { it } ?: run { "" }
+                    sellerStatus = r.seller.powerSellerStatus?.let { it } ?: run { "" }
                 }
             )
         }

@@ -14,11 +14,15 @@ import kotlinx.android.synthetic.main.item_search_result.view.*
 
 class SearchItemAdapter(
     private val mSearchItems: List<SearchResultModel>,
-    private val context: Context
+    private val mContext: Context,
+    private val mOnClickListener: View.OnClickListener
 ) : Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-        ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_search_result, parent, false))
+        ViewHolder(
+            LayoutInflater.from(mContext).inflate(R.layout.item_search_result, parent, false),
+            mOnClickListener
+        )
 
     override fun getItemCount(): Int = mSearchItems.size
 
@@ -26,10 +30,21 @@ class SearchItemAdapter(
         (holder as? ViewHolder)?.bindView(mSearchItems[position])
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(
+        itemView: View,
+        onClickListener: View.OnClickListener
+    ) : RecyclerView.ViewHolder(itemView) {
         val price = itemView.tv_price
         val title = itemView.tv_title
         val thumbnail = itemView.iv_thumbnail
+
+        init {
+            itemView.tag = this
+            itemView.apply {
+                tag = this@ViewHolder
+                setOnClickListener(onClickListener)
+            }
+        }
 
         fun bindView(searchItem: SearchResultModel) {
             title.text = searchItem.title
@@ -38,7 +53,7 @@ class SearchItemAdapter(
                 .with(itemView)
                 .load(searchItem.thumbnail)
                 .fitCenter()
-                .placeholder(R.drawable.ic_image_light)
+                .placeholder(R.drawable.ic_image_dark)
                 .into(thumbnail)
         }
     }

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".detail.view.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Toolbar"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="?attr/homeAsUpIndicator"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/app_margin_vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/app_margin_horizontal"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/app_margin_horizontal"/>
+
+            <ImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/thumbnail_height"
+                android:background="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_status_and_sold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_status_and_sold"/>
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+            <View
+                android:id="@+id/separator_product_from_seller"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/separator"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"/>
+
+            <TextView
+                android:id="@+id/tv_label_seller"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_seller_info"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/separator_product_from_seller"/>
+
+            <ImageView
+                android:id="@+id/iv_locale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_half"
+                android:src="@drawable/ic_location_dark"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_seller"
+                app:layout_constraintEnd_toStartOf="@+id/tv_label_locale"/>
+
+            <TextView
+                android:id="@+id/tv_label_locale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_locale"
+                app:layout_constraintStart_toEndOf="@id/iv_locale"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="@id/iv_locale"/>
+
+            <TextView
+                android:id="@+id/tv_locale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_label_locale"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_locale"/>
+
+            <TextView
+                android:id="@+id/tv_label_seller_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_seller_status"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_locale"/>
+
+            <TextView
+                android:id="@+id/tv_seller_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_seller_status"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_seller_locale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="iv_thumbnail,tv_locale,tv_label_locale"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_seller_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_label_seller_status,tv_seller_status"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_seller_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="group_seller_info,group_seller_locale,tv_label_seller,separator_product_from_seller"/>
+
+            <View
+                android:id="@+id/separator_seller_from_attributes"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/separator"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_seller_status"/>
+
+            <TextView
+                android:id="@+id/tv_label_attributes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_vertical"
+                android:text="@string/label_attributes"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/separator_seller_from_attributes"/>
+
+            <TextView
+                android:id="@+id/tv_lorem_ipsum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui non dui feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam porttitor interdum ex eu ultricies. Aenean at turpis blandit, ullamcorper justo pulvinar, sagittis lorem. Aliquam erat volutpat. Nulla vel luctus orci. Phasellus eu efficitur massa, a porta felis. Pellentesque lacinia elit eu lorem elementum scelerisque. Nulla vulputate lorem at dolor aliquet, et rhoncus sapien vehicula. Cras ac erat ut augue tristique iaculis nec ut justo. Suspendisse pharetra finibus faucibus. Mauris vehicula metus mauris, vitae consectetur dui lobortis id.\n\nQuisque est dolor, cursus at ante at, gravida tempus lacus. Ut at sapien sodales, condimentum nunc nec, commodo purus. Suspendisse tellus ex, egestas dapibus ex nec, efficitur maximus risus. Praesent semper purus ac tortor scelerisque, non aliquam tellus scelerisque. Vivamus nec nulla sit amet arcu dapibus eleifend. Donec tristique ante id lacus ullamcorper porttitor. Sed lectus elit, egestas vitae tristique sed, vestibulum sit amet diam. Fusce scelerisque id justo non auctor. Proin condimentum, sapien eget bibendum fermentum, metus tortor fringilla enim, nec tempor lorem diam id arcu. Proin magna est, consectetur pretium ex non, imperdiet posuere sapien. Curabitur porta interdum felis, at aliquam urna dictum nec. Vivamus nulla urna, fringilla sed sapien elementum, lacinia commodo est. Fusce dictum, eros non bibendum varius, sapien ante mollis ante, id cursus augue sapien ac lacus."
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_attributes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
