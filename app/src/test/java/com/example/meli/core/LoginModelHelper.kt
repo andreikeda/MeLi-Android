@@ -1,6 +1,6 @@
-package com.example.meli
+package com.example.meli.core
 
-object TestHelper {
+object LoginModelHelper {
     const val EMAIL_VALID_NO_SUBDOMAIN = "email_no_subdomain@mock.com"
     const val EMAIL_VALID_WITH_SUBDOMAIN = "email_with_subdomain@mock.com.br"
     const val EMAIL_INVALID_NO_DOMAIN = "email_no_domain@mock"

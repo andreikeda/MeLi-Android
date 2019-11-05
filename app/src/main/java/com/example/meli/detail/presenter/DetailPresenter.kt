@@ -11,7 +11,9 @@ import com.example.meli.detail.contract.DetailContract
  */
 class DetailPresenter(var mView: DetailContract.View?) : DetailContract.Presenter {
     override fun initComponents(data: SearchResultModel) {
-        val isSellerInfoEmpty = data.sellerLocaleFormatted.isBlank() && data.sellerStatus.isBlank()
+        val isSellerInfoEmpty = data.sellerCity.isBlank()
+                && data.sellerStatus.isBlank()
+                && data.sellerState.isBlank()
         mView?.run {
             setProductPrice(data.priceFormatted)
             setProductStatusAndSold(data.statusAndSoldUnitsFormatted)
@@ -19,7 +21,8 @@ class DetailPresenter(var mView: DetailContract.View?) : DetailContract.Presente
             if (isSellerInfoEmpty) {
                 hideGroupSellerInfo()
             } else {
-                if (data.sellerLocaleFormatted.isBlank()) {
+                if (data.sellerCity.isBlank() &&
+                        data.sellerState.isBlank()) {
                     hideGroupSellerLocale()
                 } else {
                     setSellerLocale(data.sellerLocaleFormatted)

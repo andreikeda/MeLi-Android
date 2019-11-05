@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MeLi.iml" filepath="$PROJECT_DIR$/MeLi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MeLi-Android-MeLi.iml" filepath="$PROJECT_DIR$/MeLi-Android-MeLi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/MeLi-Android-app.iml" filepath="$PROJECT_DIR$/app/MeLi-Android-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

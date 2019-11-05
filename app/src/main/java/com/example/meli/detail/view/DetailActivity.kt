@@ -111,7 +111,11 @@ class DetailActivity : AppCompatActivity(), DetailContract.View {
     }
 
     override fun hideGroupSellerInfo() {
-        group_seller_info.visibility = View.GONE
+        //group_seller_info.visibility = View.GONE
+        hideGroupSellerLocale()
+        hideGroupSellerStatus()
+        separator_product_from_seller.visibility = View.GONE
+        tv_label_seller.visibility = View.GONE
     }
 
     override fun hideGroupSellerLocale() {

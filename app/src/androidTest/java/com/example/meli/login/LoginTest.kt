@@ -3,6 +3,7 @@ package com.example.meli.login
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.example.meli.login.view.LoginActivity
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -15,17 +16,22 @@ class LoginTest {
     var activityRule: ActivityTestRule<LoginActivity>
             = ActivityTestRule(LoginActivity::class.java)
 
-    private lateinit var mRobot: LoginRobot
+    private var mRobot: LoginRobot? = null
 
     @Before
     fun setUp() {
         mRobot = LoginRobot(activityRule)
     }
 
+    @After
+    fun dismiss() {
+        mRobot?.stop()
+        mRobot = null
+    }
+
     @Test
     fun testLoginScreen_FillEmailWithInvalidData_CheckTextErrorEmail() {
-        mRobot
-            .login {
+        mRobot?.login {
                 start()
                 fillEmail(LoginHelper.EMAIL_INVALID_EXTRA_DOTS)
                 clickEnter()
@@ -36,8 +42,7 @@ class LoginTest {
 
     @Test
     fun testLoginScreen_FillEmailWithValidData_FillPasswordWithInvalidData_CheckTextErrorPassword() {
-        mRobot
-            .login {
+        mRobot?.login {
                 start()
                 fillEmail(LoginHelper.EMAIL_VALID_NO_SUBDOMAIN)
                 fillPassword(LoginHelper.PASSWORD_INVALID_MAX_LENGHT)
