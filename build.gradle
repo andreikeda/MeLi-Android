@@ -44,5 +44,6 @@ ext {
     retrofit_version = '2.6.2'
     testjunit_version = '1.1.1'
     testespresso_version = '3.2.0'
-    testrunner_version = '1.2.0'
+    testrunner_version = '1.3.0-alpha02'
+    testrules_version = '1.2.0'
 }

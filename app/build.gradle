@@ -48,4 +48,6 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$testrunner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$testespresso_version"
     implementation "com.google.android.material:material:$material_version"
+    androidTestImplementation "androidx.test:rules:$testrules_version"
+    implementation 'androidx.test.espresso:espresso-intents:3.3.0-alpha02'
 }
