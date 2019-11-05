@@ -59,6 +59,9 @@ class DetailActivity : AppCompatActivity(), DetailContract.View {
             )
         }
         val spacing = resources.getDimensionPixelSize(R.dimen.app_margin_vertical)
+        /**
+         * Iterate map to add columns for each item
+         */
         items.forEach { (key, value) ->
             val ll = LinearLayout(this).apply {
                 layoutParams = TableRow.LayoutParams(
@@ -111,7 +114,6 @@ class DetailActivity : AppCompatActivity(), DetailContract.View {
     }
 
     override fun hideGroupSellerInfo() {
-        //group_seller_info.visibility = View.GONE
         hideGroupSellerLocale()
         hideGroupSellerStatus()
         separator_product_from_seller.visibility = View.GONE
