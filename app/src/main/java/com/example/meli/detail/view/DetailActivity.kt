@@ -19,6 +19,8 @@ import com.example.meli.core.model.SearchResultModel
 import com.example.meli.detail.contract.DetailContract
 import com.example.meli.detail.presenter.DetailPresenter
 import kotlinx.android.synthetic.main.activity_detail.*
+import android.view.MenuItem
+
 
 class DetailActivity : AppCompatActivity(), DetailContract.View {
 
@@ -49,6 +51,14 @@ class DetailActivity : AppCompatActivity(), DetailContract.View {
         mPresenter = null
 
         super.onDestroy()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun addAttributesTableRow(items: HashMap<String, String>) {
