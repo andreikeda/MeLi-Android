@@ -8,7 +8,7 @@ import com.example.meli.BaseTestRobot
 import com.example.meli.R
 import com.example.meli.login.view.LoginActivity
 
-class LoginRobot(var activityTestRule: ActivityTestRule<LoginActivity>?): BaseTestRobot() {
+class LoginRobot(var activityTestRule: ActivityTestRule<LoginActivity>?) : BaseTestRobot() {
     private val BUTTON_ENTER = R.id.button_enter
     private val INPUT_EMAIL = R.id.input_email
     private val INPUT_PASSWORD = R.id.input_password
@@ -37,5 +37,4 @@ class LoginRobot(var activityTestRule: ActivityTestRule<LoginActivity>?): BaseTe
     fun clickEnter() = clickButton(BUTTON_ENTER)
     fun fillEmail(email: String) = fillEditText(INPUT_EMAIL, email)
     fun fillPassword(password: String) = fillEditText(INPUT_PASSWORD, password)
-
 }

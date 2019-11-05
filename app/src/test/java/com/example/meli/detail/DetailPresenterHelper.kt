@@ -132,5 +132,4 @@ object DetailPresenterHelper {
             tags.plus(CUSTOM_TAGS)
             attributes.putAll(COMMON_ATTRIBUTES)
         }
-
 }

@@ -1,7 +1,6 @@
 package com.example.meli.detail
 
 import android.content.Context
-import android.content.Intent
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.example.meli.BaseTestRobot

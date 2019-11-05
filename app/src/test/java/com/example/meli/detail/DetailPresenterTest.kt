@@ -156,5 +156,4 @@ class DetailPresenterTest {
         mPresenter?.unregister()
         mPresenter = null
     }
-
 }

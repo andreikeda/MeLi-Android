@@ -13,8 +13,8 @@ import org.junit.runner.RunWith
 class LoginTest {
 
     @get:Rule
-    var activityRule: ActivityTestRule<LoginActivity>
-            = ActivityTestRule(LoginActivity::class.java)
+    var activityRule: ActivityTestRule<LoginActivity> =
+            ActivityTestRule(LoginActivity::class.java)
 
     private var mRobot: LoginRobot? = null
 
